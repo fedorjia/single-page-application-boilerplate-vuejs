@@ -1,5 +1,6 @@
->single page web mobile application boilerplate with vue2.0 & vuex & vue-router
+> spa boilerplate with vue2 & vuex & vue-router
 
+> generate by webpack template: https://github.com/vuejs-templates/webpack
 
 # Usage
 

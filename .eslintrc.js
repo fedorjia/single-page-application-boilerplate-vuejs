@@ -1,44 +1,30 @@
-module.exports = {
-    root: true,
-    parser: 'babel-eslint',
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true
-    },
-    "extends": "eslint:recommended",
-    // required to lint *.vue files
-    plugins: [
-        'html'
-    ],
-    "parserOptions": {
-        "sourceType": "module"
-    },
-    "rules": {
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        // allow debugger during development
-        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-        "no-console": 0,
-        "no-unused-vars": 0
-    },
+// https://eslint.org/docs/user-guide/configuring
 
-    "globals": {
-        "$": true,
-        "process": true,
-        "__dirname": true,
-        "rm": true,
-        "mkdir": true,
-        "cp": true
-    }
-};
+module.exports = {
+  root: true,
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  env: {
+    browser: true,
+  },
+  extends: [
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    'plugin:vue/essential',
+    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
+    'standard'
+  ],
+  // required to lint *.vue files
+  plugins: [
+    'vue'
+  ],
+  // add your custom rules here
+  rules: {
+    // allow async-await
+    'generator-star-spacing': 'off',
+    'no-return-await': 'off',
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+  }
+}

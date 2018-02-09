@@ -1,2 +1,4 @@
-webapp/build/*.js
-webapp/config/*.js
+/build/
+/config/
+/dist/
+/*.js
